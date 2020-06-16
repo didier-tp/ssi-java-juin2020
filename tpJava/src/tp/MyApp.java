@@ -5,7 +5,14 @@ public class MyApp {
 	public static void main(String[] args) {
 		System.out.println("Hello world");
 		//m1();
-		m2();
+		//m2();
+		testPersonne();
+	}
+	
+	public static void testPersonne() {
+		Personne p1=null;
+		//p1 = .
+		//p1.nom;
 	}
 	
 	public static void m2() {
@@ -22,6 +29,7 @@ public class MyApp {
 		Integer oi1=null;
 		//oi1=new Integer(4);
 		oi1=4;
+		// oi1.setValue(5); n'existe pas car IMMUTABLE 
 	
 	}
 	
