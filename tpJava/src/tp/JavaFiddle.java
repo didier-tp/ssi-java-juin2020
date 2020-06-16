@@ -10,7 +10,7 @@ public static void main(String[] args) {
 	
 	public  void testPersonne() {
 		Personne p1=null;
-		p1 = new Personne("toto",45,60.0);
+		p1 = new Personne("titi",45,60.0);
 		//avec v1 (tout en public): p1.nom="Dupond"; p1.age=45; p1.poids=60.0;
 		p1.setNom("Dupond"); p1.setAge(45); p1.setPoids(60.0);
 		p1.incrementerAge();
@@ -22,20 +22,20 @@ public static void main(String[] args) {
 		p2.setNom("Durant"); p2.setAge(35); p2.setPoids(40.0);
 		p2.incrementerAge();
 		p2.afficher();
-		//System.out.println("p2="+p2);//p2.toString() appelé implicitement
-		p2.setAge(-50);//valeur interdite refusée
+		//System.out.println("p2="+p2);//p2.toString() appele implicitement
+		p2.setAge(-50);//valeur interdite refusee
 		p2.afficher();
 		if(p1.equals(p2)) {
 			System.out.println("p1 et p2 ont les memes valeurs");
 		}else{
-			System.out.println("p1 et p2 ont des valeurs différentes");
+			System.out.println("p1 et p2 ont des valeurs differentes");
 		}
 	}
 	
 	public class Personne{
 		private String nom;
-		   //public int age; // 0 par défaut
-		   private Integer age; //null par défaut
+		   //public int age; // 0 par defaut
+		   private Integer age; //null par defaut
 		   private Double poids;
 		   
 
@@ -43,7 +43,7 @@ public static void main(String[] args) {
 			super();
 		}
 
-		//MALHEUREUSEMENT PAS de =valeur par défaut comme en c++ !!!!
+		//MALHEUREUSEMENT PAS de =valeur par defaut comme en c++ !!!!
 		//public Personne(String nom="?", Integer age=0, Double poids=0.0) impossible en java (snif, snif)
 		public Personne(String nom, Integer age, Double poids) {
 			super();
@@ -104,8 +104,8 @@ public static void main(String[] args) {
 
 		public void setAge(Integer age) {
 			if(age<0) {
-				 System.err.println("age négatif invalide");
-				 //throw new RuntimeException("age négatif invalide");
+				 System.err.println("age negatif invalide");
+				 //throw new RuntimeException("age negatif invalide");
 			}else {
 			    this.age = age;
 			}

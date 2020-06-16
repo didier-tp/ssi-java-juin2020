@@ -7,7 +7,7 @@ public class MyApp {
 		//m1();
 		//m2();
 		testPersonne();
-		testGc();
+		//testGc();
 	}
 	
 	public static void testGc() {
