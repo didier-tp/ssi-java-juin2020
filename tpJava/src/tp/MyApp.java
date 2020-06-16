@@ -14,13 +14,22 @@ public class MyApp {
 		p1 = new Personne();
 		p1.nom="Dupond"; p1.age=45; p1.poids=60.0;
 		p1.incrementerAge();
-		p1.afficher();
+		//p1.afficher();
+		System.out.println("p1="+p1.toString());
 		
 		Personne p2=null;
 		p2 = new Personne();
-		p2.nom="jean Bon"; p2.age=35; p2.poids=40.0;
+		p2.nom="Dupond"; p2.age=35; p2.poids=60.0;
 		p2.incrementerAge();
 		p2.afficher();
+		//System.out.println("p2="+p2);//p2.toString() appelé implicitement
+		
+		
+		if(p1.equals(p2)) {
+			System.out.println("meme valeurs");
+		}else{
+			System.out.println("différentes");
+		}
 	}
 	
 	public static void m2() {
