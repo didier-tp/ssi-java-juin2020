@@ -1,0 +1,8 @@
+* jdk 1.8 ou 1.11 ou ...(pour windows 64 bits ou autre).
+* eclipse recent 2019 ou 2020 EN VERSION JEE (Entreprise Edition)
+-------
+git for windows , tortoise git (facultatif)
+maven 3 (facultatif)
+* apache_tomcat (v9)
+* MySQL ou MariaDB 
+___________
