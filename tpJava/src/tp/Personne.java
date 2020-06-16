@@ -121,6 +121,11 @@ public void setPoids(Double poids) {
 	this.poids = poids;
 }
 
+@Override
+protected void finalize() throws Throwable {
+	System.out.println("finalize() appele sur Personne");
+}
+
 
    
 }

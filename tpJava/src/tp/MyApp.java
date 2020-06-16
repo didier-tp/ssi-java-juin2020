@@ -7,6 +7,25 @@ public class MyApp {
 		//m1();
 		//m2();
 		testPersonne();
+		testGc();
+	}
+	
+	public static void testGc() {
+		int n=10;
+	    Personne[] tabRefPers = new Personne[n];
+	    for(int i=0;i<n;i++) {
+	    	tabRefPers[i]=new Personne();
+	    }
+	    for(int i=0;i<n;i++) {
+	    	tabRefPers[i]=null;
+	    }
+	    System.gc();
+	    try {
+			Thread.sleep(1000*5); //5000ms = 5s de pause
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	    System.out.println("fin de testGc");
 	}
 	
 	public static void testPersonne() {
