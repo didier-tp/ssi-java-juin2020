@@ -1,14 +1,25 @@
 package tp;
 
 public class Personne {
-   public String nom;
+   private String nom;
    //public int age; // 0 par défaut
-   public Integer age; //null par défaut
-   public Double poids;
+   private Integer age; //null par défaut
+   private Double poids;
    
-   
-   
-  
+
+public Personne() {
+	super();
+}
+
+//MALHEUREUSEMENT PAS de =valeur par défaut comme en c++ !!!!
+//public Personne(String nom="?", Integer age=0, Double poids=0.0) impossible en java (snif, snif)
+public Personne(String nom, Integer age, Double poids) {
+	super();
+	this.nom = nom;
+	this.age = age;
+	this.poids = poids;
+}
+
 
 
 @Override
@@ -68,5 +79,48 @@ public void afficher() {
 	   this.age++;
 	   //this.age = this.age + 1;
    }
+
+
+
+public Integer getAge() {
+	return age;
+}
+
+
+
+public void setAge(Integer age) {
+	if(age<0) {
+		 System.err.println("age négatif invalide");
+		 //throw new RuntimeException("age négatif invalide");
+	}else {
+	    this.age = age;
+	}
+}
+
+
+
+public String getNom() {
+	return nom;
+}
+
+
+
+public void setNom(String nom) {
+	this.nom = nom;
+}
+
+
+
+public Double getPoids() {
+	return poids;
+}
+
+
+
+public void setPoids(Double poids) {
+	this.poids = poids;
+}
+
+
    
 }

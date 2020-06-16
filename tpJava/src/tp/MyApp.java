@@ -11,24 +11,25 @@ public class MyApp {
 	
 	public static void testPersonne() {
 		Personne p1=null;
-		p1 = new Personne();
-		p1.nom="Dupond"; p1.age=45; p1.poids=60.0;
+		p1 = new Personne("toto",45,60.0);
+		//avec v1 (tout en public): p1.nom="Dupond"; p1.age=45; p1.poids=60.0;
+		p1.setNom("Dupond"); p1.setAge(45); p1.setPoids(60.0);
 		p1.incrementerAge();
 		//p1.afficher();
 		System.out.println("p1="+p1.toString());
 		
 		Personne p2=null;
-		p2 = new Personne();
-		p2.nom="Dupond"; p2.age=35; p2.poids=60.0;
+		p2 = new Personne();//via constructeur par defaut
+		p2.setNom("Durant"); p2.setAge(35); p2.setPoids(40.0);
 		p2.incrementerAge();
 		p2.afficher();
 		//System.out.println("p2="+p2);//p2.toString() appelé implicitement
-		
-		
+		p2.setAge(-50);//valeur interdite refusée
+		p2.afficher();
 		if(p1.equals(p2)) {
-			System.out.println("meme valeurs");
+			System.out.println("p1 et p2 ont les memes valeurs");
 		}else{
-			System.out.println("différentes");
+			System.out.println("p1 et p2 ont des valeurs différentes");
 		}
 	}
 	
