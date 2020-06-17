@@ -1,6 +1,6 @@
 package tp;
 
-public class Cercle {
+public class Cercle /* extends Object */{
 	private double xc;
 	private double yc;
 	private double rayon ;
@@ -14,6 +14,7 @@ public class Cercle {
 		this.xc = xc;
 		this.yc = yc;
 		this.rayon = rayon;
+
 	}
 	
 	public Cercle() {

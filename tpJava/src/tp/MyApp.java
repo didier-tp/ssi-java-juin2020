@@ -6,14 +6,14 @@ public class MyApp {
 		System.out.println("Hello world");
 		//m1();
 		//m2();
-		//testPersonne();
+		testPersonne();
 		//testGc();
-		testStringEtTableau();
-		testAvion();
-		MyApp myApp = new MyApp();
-		myApp.testMath();
+		//testStringEtTableau();
+		//testAvion();
+		/*MyApp myApp = new MyApp();
+		myApp.testMath();*/
 		//testStatic();
-		testCercle();
+		//testCercle();
 	}
 	
 	public static void testCercle() {
@@ -147,6 +147,16 @@ public class MyApp {
 		}else{
 			System.out.println("p1 et p2 ont des valeurs différentes");
 		}
+		
+		Employe e1 = new Employe();
+		e1.setNom("axelle Aire"); e1.setPoids(67.7); e1.setAge(33);
+		e1.setSalaire(2500.0);
+		//e1.afficher();
+		MyUtil.display(e1.toString());
+		
+		Employe e2 = new Employe("alex Therieur",45,88.88,2000.0);//nom,age,poids,salaire
+	    e2.augmenterSalairePct(3); //3% augmentation
+		MyUtil.display(e2.toString());
 	}
 	
 	public static void m2() {
