@@ -18,8 +18,13 @@ public class MyApp {
 	public static void testStatic() {
 		String nom = MyUtil.input("nom:");
 		MyUtil.display("nom="+nom);
-		Integer age = Integer.parseInt(MyUtil.inputDlg("age:"));
-		MyUtil.displayDlg("age="+age);
+		//Integer age = Integer.parseInt(MyUtil.inputDlg("age:"));
+		//MyUtil.displayDlg("age="+age);
+		MyUtil.display("VITESSE_MAXI_STOP="+Reglements.VITESSE_MAXI_STOP);
+		
+		MyUtil.display("vitesseMaxiAgglomeration="+Reglements.vitesseMaxiAgglomeration);
+		Reglements.vitesseMaxiAgglomeration=45;
+		MyUtil.display("vitesseMaxiAgglomeration="+Reglements.vitesseMaxiAgglomeration);
 	}
 	
 	public  void testMath() {
