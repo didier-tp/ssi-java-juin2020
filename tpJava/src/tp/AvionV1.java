@@ -4,10 +4,12 @@ public class AvionV1 {
 	
 	private Personne[] tabElements;
 	private int nbElements;
-	private int tailleMax= 50;
+	private int tailleMax=50;
 	
 	public AvionV1(){
-		tabElements = new Personne[tailleMax];
+		//tailleMax=50;
+		tabElements = new Personne[tailleMax]; //tableau de 50 références (au début à null)
+		                                       //vers des personnes
 		nbElements=0;
 	}
 	

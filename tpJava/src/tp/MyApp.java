@@ -10,6 +10,21 @@ public class MyApp {
 		//testGc();
 		testStringEtTableau();
 		testAvion();
+		MyApp myApp = new MyApp();
+		myApp.testMath();
+		testStatic();
+	}
+	
+	public static void testStatic() {
+		String nom = MyUtil.input("nom:");
+		MyUtil.display("nom="+nom);
+		Integer age = Integer.parseInt(MyUtil.inputDlg("age:"));
+		MyUtil.displayDlg("age="+age);
+	}
+	
+	public  void testMath() {
+		double x = Math.sin(Math.PI/2);
+		System.out.println("x="+x);
 	}
 	
 	public static void testAvion() {
