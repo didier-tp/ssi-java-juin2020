@@ -21,7 +21,7 @@ public class Cercle {
 	}
 	
 	
-
+  
 	@Override
 	public String toString() {
 		return "Cercle [xc=" + xc + ", yc=" + yc + ", rayon=" + rayon + "]";

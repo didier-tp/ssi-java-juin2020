@@ -17,7 +17,10 @@ public class MyApp {
 	}
 	
 	public static void testCercle() {
+		int a=0;
+		System.out.println("a="+a);
 		Cercle c1= new Cercle();
+		MyUtil.display("coordonnées de c1=" + c1); //ou bien + c1.toString()
 		c1.setXc(5);c1.setYc(15);c1.setRayon(100);
 		MyUtil.display("coordonnées de c1=" + c1); //ou bien + c1.toString()
 		MyUtil.display("perimetre de c1=" + c1.perimetre());
