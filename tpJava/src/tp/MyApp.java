@@ -6,8 +6,32 @@ public class MyApp {
 		System.out.println("Hello world");
 		//m1();
 		//m2();
-		testPersonne();
+		//testPersonne();
 		//testGc();
+		testStringEtTableau();
+	}
+	
+	
+	public static void testStringEtTableau() {
+		String s1="azerty";
+		//construire s1Inverse et l'afficher (.charAt(i))
+		
+		String s2="juin";
+		//afficher en majuscule
+		
+		String s3="rueXy;75001;Paris";
+		//récuperer et afficher la sous-chaine entre les 2 ;
+		//.indexOf()  , .lastIndexOf() , .substring
+		
+		
+		//page 35 inspiration
+		//construire un tableau de 10 entier avec les valeurs 0,1,9
+		
+		//construire un 2eme tableau ou chaque valeur est le double du tableau 1 
+		//+ affichage (version boucle while ET AUSSI boucle for)
+		
+		int tab3[] = { 2 , 5 , 8 ,9, 4 };
+		//calculer et afficher la moyenne
 	}
 	
 	public static void testGc() {
