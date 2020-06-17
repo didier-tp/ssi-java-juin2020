@@ -15,23 +15,52 @@ public class MyApp {
 	public static void testStringEtTableau() {
 		String s1="azerty";
 		//construire s1Inverse et l'afficher (.charAt(i))
+		StringBuilder buffer=new StringBuilder(s1.length());
+		for(int i=s1.length()-1;i>=0;i--) {
+			buffer.append(s1.charAt(i));
+		}
+		String s1Inverse = buffer.toString();
+		System.out.println("s1Inverse ="+s1Inverse);
 		
 		String s2="juin";
 		//afficher en majuscule
+		String s2Maj = s2.toUpperCase();
+		System.out.println("s2Maj="+s2Maj);
 		
 		String s3="rueXy;75001;Paris";
 		//récuperer et afficher la sous-chaine entre les 2 ;
 		//.indexOf()  , .lastIndexOf() , .substring
-		
+		int posPremierPointVirgule=s3.indexOf(";");
+		int posDeuxiemePointVirgule=s3.lastIndexOf(";");
+		String codePostal = s3.substring(posPremierPointVirgule+1, posDeuxiemePointVirgule);
+		System.out.println("codePostal="+codePostal);
 		
 		//page 35 inspiration
 		//construire un tableau de 10 entier avec les valeurs 0,1,9
-		
+		int[] tab1 = new int[10];
+		for(int i=0;i<tab1.length;i++) {
+			tab1[i]=i;
+		}
+		int[] tab2 = new int[tab1.length];
 		//construire un 2eme tableau ou chaque valeur est le double du tableau 1 
 		//+ affichage (version boucle while ET AUSSI boucle for)
+		for(int i=0;i<tab1.length;i++) {
+			tab2[i]=2*tab1[i];
+		}
+		int index=0;
+		while(index<tab2.length) {
+			System.out.println(tab2[index]);
+			index++;
+		}
 		
 		int tab3[] = { 2 , 5 , 8 ,9, 4 };
 		//calculer et afficher la moyenne
+		int somme=0;
+		for(int i=0;i<tab3.length;i++) {
+			somme+=tab3[i];//somme=somme+tab3[i];
+		}
+		int moyenne = somme/tab3.length;
+		System.out.println("moyenne="+moyenne);
 	}
 	
 	public static void testGc() {
