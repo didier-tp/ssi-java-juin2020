@@ -14,7 +14,7 @@ public class MyUtil {
 		 System.out.print(invite); //ex: invite="votre nom ?"
 		java.util.Scanner reader = new java.util.Scanner(System.in);
 		String sValeurSaisie = reader.next();
-		reader.close();
+		//reader.close();
 		return sValeurSaisie;
 	}
 	
