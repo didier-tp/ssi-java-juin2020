@@ -18,11 +18,15 @@ public class MyApp {
 	
 	public static void testCercle() {
 		Cercle c1= new Cercle();
-		//...
+		c1.setXc(5);c1.setYc(15);c1.setRayon(100);
+		MyUtil.display("coordonnées de c1=" + c1); //ou bien + c1.toString()
 		MyUtil.display("perimetre de c1=" + c1.perimetre());
+		MyUtil.display("surface de c1=" + c1.surface());
 		//...
-		Cercle c2= new Cercle(12.0,12.0,50.0);
-		//...
+		Cercle c2= new Cercle(12.0,12.0,50.0);//xc,yc,rayon
+		MyUtil.display("coordonnées de c2=" + c2); //ou bien + c1.toString()
+		MyUtil.display("perimetre de c2=" + c2.perimetre());
+		MyUtil.display("surface de c2=" + c2.surface());
 	}
 	
 	public static void testStatic() {
