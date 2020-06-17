@@ -12,7 +12,17 @@ public class MyApp {
 		testAvion();
 		MyApp myApp = new MyApp();
 		myApp.testMath();
-		testStatic();
+		//testStatic();
+		testCercle();
+	}
+	
+	public static void testCercle() {
+		Cercle c1= new Cercle();
+		//...
+		MyUtil.display("perimetre de c1=" + c1.perimetre());
+		//...
+		Cercle c2= new Cercle(12.0,12.0,50.0);
+		//...
 	}
 	
 	public static void testStatic() {
