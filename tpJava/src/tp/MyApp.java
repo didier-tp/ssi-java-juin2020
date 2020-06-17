@@ -9,8 +9,15 @@ public class MyApp {
 		//testPersonne();
 		//testGc();
 		testStringEtTableau();
+		testAvion();
 	}
 	
+	public static void testAvion() {
+		AvionV1 avion1 = new AvionV1(); 
+		avion1.initialiser();
+		avion1.addElement(new Personne("Jean Bon",42,68.4));
+		avion1.afficher();
+	}
 	
 	public static void testStringEtTableau() {
 		String s1="azerty";
