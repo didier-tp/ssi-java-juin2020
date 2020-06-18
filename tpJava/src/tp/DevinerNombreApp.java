@@ -1,5 +1,7 @@
 package tp;
 
+import util.MyUtil;
+
 public class DevinerNombreApp {
 
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package tp;
+package util;
 
 public class MyUtil {
 	

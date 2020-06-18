@@ -9,6 +9,7 @@ public class Bagage implements Descriptible{
 	public Double getPoids() {
 		return poids;
 	}
+	
 	@Override
 	public String getDesignation() {
 		return label;

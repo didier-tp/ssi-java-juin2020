@@ -1,5 +1,11 @@
 package tp;
 
+import java.util.Date;
+import tp.porte.Porte;
+import tp.porte.PorteBattant;
+import tp.porte.PorteCoulissante;
+import util.MyUtil;
+
 public class MyApp {
 
 	public static void main(String[] args) {
@@ -10,11 +16,18 @@ public class MyApp {
 		//testPorte();
 		//testGc();
 		//testStringEtTableau();
-		testAvion();
+		//testAvion();
 		/*MyApp myApp = new MyApp();
 		myApp.testMath();*/
 		//testStatic();
 		//testCercle();
+		testDate();
+	}
+	
+	public static void testDate() {
+	   //java.util.Date d = new java.util.Date(); //sans import
+		Date d = new Date();
+	   System.out.println("d="+d);
 	}
 	
 	public static void testPorte() {
