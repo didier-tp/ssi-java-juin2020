@@ -25,6 +25,10 @@ public class Employe extends Personne {
 	public void augmenterSalairePct(double pctAugmentation) {
 		this.salaire = this.salaire * (1 + pctAugmentation/100);
 	}
+	
+	public Double getSalaireTotal() {
+		return salaire; //considéré comme salaire fixe
+	}
 
 	public Double getSalaire() {
 		return salaire;

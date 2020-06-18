@@ -169,6 +169,18 @@ public class MyApp {
 	    e2.augmenterSalairePct(3); //3% augmentation
 	    e2.incrementerAge();
 		MyUtil.display(e2.toString());
+		
+		
+		Commercial c1;
+		c1 = new Commercial("c1",43,67.0,1500.0);
+		c1.setTauxCommission(1.0);
+		c1.setVentesDuMois(30000.0);
+		
+		Employe eOuC;
+		eOuC=c1;
+		MyUtil.display("salaireTotal de eOuC=c1 :"+eOuC.getSalaireTotal());
+		eOuC=e1;
+		MyUtil.display("salaireTotal de eOuC=e1 :"+eOuC.getSalaireTotal());
 	}
 	
 	public static void m2() {
