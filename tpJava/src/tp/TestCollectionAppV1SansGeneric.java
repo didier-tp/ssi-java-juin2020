@@ -3,7 +3,7 @@ package tp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestCollectionApp {
+public class TestCollectionAppV1SansGeneric {
 
 	public static void main(String[] args) {
 		List liste1 = new ArrayList();
