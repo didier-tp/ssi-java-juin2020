@@ -1,6 +1,6 @@
 package tp;
 
-public class Personne {
+public class Personne implements Descriptible {
    private String nom;
    //public int age; // 0 par défaut
    private Integer age; //null par défaut
@@ -124,6 +124,11 @@ public void setPoids(Double poids) {
 @Override
 protected void finalize() throws Throwable {
 	System.out.println("finalize() appele sur Personne");
+}
+
+@Override
+public String getDesignation() {
+	return this.nom + " (Humain)";
 }
 
 

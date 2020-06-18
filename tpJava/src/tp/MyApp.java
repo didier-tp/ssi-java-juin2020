@@ -84,9 +84,11 @@ public class MyApp {
 	}
 	
 	public static void testAvion() {
-		AvionV1 avion1 = new AvionV1(); 
+		//AvionV1 avion1 = new AvionV1(); 
+		AvionV2 avion1 = new AvionV2(); 
 		avion1.initialiser();
 		avion1.addElement(new Personne("Jean Bon",42,68.4));
+		avion1.addElement(new Bagage("valise contenant Carlos Ghosn",110.0,169.7));
 		avion1.afficher();
 	}
 	
