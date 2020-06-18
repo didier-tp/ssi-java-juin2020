@@ -7,10 +7,10 @@ public class MyApp {
 		//m1();
 		//m2();
 		//testPersonne();
-		testPorte();
+		//testPorte();
 		//testGc();
 		//testStringEtTableau();
-		//testAvion();
+		testAvion();
 		/*MyApp myApp = new MyApp();
 		myApp.testMath();*/
 		//testStatic();

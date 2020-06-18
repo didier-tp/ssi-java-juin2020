@@ -14,8 +14,8 @@ public class AvionV1 {
 	}
 	
 	public void initialiser(){
-		this.addElement(new Personne("pilote",45,68.4));
-		this.addElement(new Personne("hotesse",35,58.4));
+		this.addElement(new Employe("pilote",45,68.4,4000.0));
+		this.addElement(new Employe("hotesse",35,58.4,2000.0));
 		this.addElement(new Personne("passager1",55,78.4));
 		this.addElement(new Personne("passager2",25,88.4));
 	}
@@ -33,7 +33,7 @@ public class AvionV1 {
 	public void afficher() {
 		System.out.println("avion nbElements=" + this.nbElements);
 		for(int i=0;i<this.nbElements;i++) {
-			System.out.println("\t"+this.tabElements[i].toString());
+			System.out.println("\t"+this.tabElements[i].toString());//polymorphisme
 		}
 	}
 
