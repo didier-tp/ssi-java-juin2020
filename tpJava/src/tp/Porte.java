@@ -2,8 +2,8 @@ package tp;
 
 public class Porte {
 	private String couleur;
-	public void ouvrir() { System.out.println("ouverture ..."); }
-	public void fermer() { System.out.println("fermeture ..."); }
+	public void ouvrir() { System.out.print("ouverture ..."); }
+	public void fermer() { System.out.print("fermeture ..."); }
 
 	public Porte() {
 		super();

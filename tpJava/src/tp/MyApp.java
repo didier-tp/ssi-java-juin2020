@@ -31,6 +31,17 @@ public class MyApp {
 		 */
 		p = pb;
 		p.ouvrir(); p.fermer(); //Polymorphisme
+		
+		//------------- polymorphimse en boucle -----
+		Porte[] tabRefPortes = new Porte[2];
+		tabRefPortes[0]=pc;
+		tabRefPortes[1]=pb;
+		for(int i=0;i<2;i++) {
+			tabRefPortes[i].ouvrir();
+		}
+		for(int i=0;i<2;i++) {
+			tabRefPortes[i].fermer();
+		}
 	}
 	
 	public static void testCercle() {
