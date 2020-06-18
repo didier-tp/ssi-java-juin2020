@@ -148,14 +148,26 @@ public class MyApp {
 			System.out.println("p1 et p2 ont des valeurs différentes");
 		}
 		
+		Personne eOuP = null;
 		Employe e1 = new Employe();
 		e1.setNom("axelle Aire"); e1.setPoids(67.7); e1.setAge(33);
 		e1.setSalaire(2500.0);
 		//e1.afficher();
 		MyUtil.display(e1.toString());
 		
+		//eOuP=p1;
+		eOuP=e1;
+		//eOuP=new Employe();
+		eOuP.incrementerAge();
+		if(eOuP instanceof Employe) {
+			//Employe eOuPasEmploye = (Employe) eOuP;
+			//eOuPasEmploye.setSalaire(2700.0);
+			((Employe)eOuP).setSalaire(2700.0);
+		}
+		
 		Employe e2 = new Employe("alex Therieur",45,88.88,2000.0);//nom,age,poids,salaire
 	    e2.augmenterSalairePct(3); //3% augmentation
+	    e2.incrementerAge();
 		MyUtil.display(e2.toString());
 	}
 	

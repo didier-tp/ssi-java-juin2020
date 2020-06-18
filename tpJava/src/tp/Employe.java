@@ -4,7 +4,6 @@ public class Employe extends Personne {
 	
 	private Double salaire;
 	
-
 	public Employe() {
 		super();
 	}
@@ -12,7 +11,7 @@ public class Employe extends Personne {
 	public Employe(String nom, Integer age, Double poids) {
 		super(nom, age, poids);
 	}
-	
+
 	public Employe(String nom, Integer age, Double poids,Double salaire) {
 		super(nom, age, poids);
 		this.salaire=salaire;
