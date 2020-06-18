@@ -10,13 +10,13 @@ public class PorteBattant extends Porte {
 
 	@Override
 	public void ouvrir() {
-		super.ouvrir();
+		//super.ouvrir();
 		this.pivoter(90);//90 degrés
 	}
 
 	@Override
 	public void fermer() {
-		super.fermer();
+		//super.fermer();
 		this.pivoter(0);//0 degré
 	}
      

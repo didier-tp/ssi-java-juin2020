@@ -1,9 +1,9 @@
 package tp;
 
-public class Porte {
+public abstract class Porte {
 	private String couleur;
-	public void ouvrir() { System.out.print("ouverture ..."); }
-	public void fermer() { System.out.print("fermeture ..."); }
+	public abstract void ouvrir() ;//{ System.out.print("ouverture ..."); }
+	public abstract void fermer(); //{ System.out.print("fermeture ..."); }
 
 	public Porte() {
 		super();

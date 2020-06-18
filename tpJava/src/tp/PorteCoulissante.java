@@ -11,13 +11,13 @@ public class PorteCoulissante extends Porte {
 
 	@Override
 	public void ouvrir() {
-		super.ouvrir();
+		//super.ouvrir();
 		this.glisser(90);//90cm
 	}
 
 	@Override
 	public void fermer() {
-		super.fermer();
+		//super.fermer();
 		this.glisser(0);//0cm
 	}
     

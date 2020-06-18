@@ -19,10 +19,12 @@ public class MyApp {
 	
 	public static void testPorte() {
 		Porte p=null;
+		//p=new Porte(); // new Porte() maintenant interdit si classe Porte abstraite
 		PorteCoulissante pc = new PorteCoulissante();
 		PorteBattant pb = new PorteBattant();
 		p = pc;
 		p.ouvrir(); p.fermer(); //Polymorphisme
+		p.setCouleur("rouge"); System.out.println(" ... de couleur " + p.getCouleur());
 		/*
 		 En langage C , if( p.type == PORTE_COULISSANTE)
 		          ouvrirPorteCoulissante(p);
@@ -32,7 +34,11 @@ public class MyApp {
 		p = pb;
 		p.ouvrir(); p.fermer(); //Polymorphisme
 		
-		//------------- polymorphimse en boucle -----
+		//En plus des méthodes polymorphes abstraites ou concrètes ,
+		//une classe abstraite peut comporter des attributs et méthodes concrets (ici couleur):
+		p.setCouleur("vert");  System.out.println(" ... de couleur " + p.getCouleur());
+		
+		//------------- polymorphisme en boucle -----
 		Porte[] tabRefPortes = new Porte[2];
 		tabRefPortes[0]=pc;
 		tabRefPortes[1]=pb;
