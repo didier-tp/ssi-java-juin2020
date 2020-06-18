@@ -6,7 +6,8 @@ public class MyApp {
 		System.out.println("Hello world");
 		//m1();
 		//m2();
-		testPersonne();
+		//testPersonne();
+		testPorte();
 		//testGc();
 		//testStringEtTableau();
 		//testAvion();
@@ -14,6 +15,22 @@ public class MyApp {
 		myApp.testMath();*/
 		//testStatic();
 		//testCercle();
+	}
+	
+	public static void testPorte() {
+		Porte p=null;
+		PorteCoulissante pc = new PorteCoulissante();
+		PorteBattant pb = new PorteBattant();
+		p = pc;
+		p.ouvrir(); p.fermer(); //Polymorphisme
+		/*
+		 En langage C , if( p.type == PORTE_COULISSANTE)
+		          ouvrirPorteCoulissante(p);
+		      else if( p.type == PORTE_BATTANT)
+		            ouvrirPorteBattant(p);
+		 */
+		p = pb;
+		p.ouvrir(); p.fermer(); //Polymorphisme
 	}
 	
 	public static void testCercle() {
