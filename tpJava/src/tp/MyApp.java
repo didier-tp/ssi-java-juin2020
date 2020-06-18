@@ -165,6 +165,14 @@ public class MyApp {
 			((Employe)eOuP).setSalaire(2700.0);
 		}
 		
+		//Personne eOuP = null; quelques lignes au dessus
+		eOuP = new Personne("nom1",45,67.0);
+		MyUtil.display("** eOuP.toString()="+eOuP.toString()); //Polymorphisme
+		eOuP = new Employe("nom1",45,67.0,2500.0);
+		MyUtil.display("** eOuP.toString()="+eOuP.toString()); //Polymorphisme
+		
+		
+		
 		Employe e2 = new Employe("alex Therieur",45,88.88,2000.0);//nom,age,poids,salaire
 	    e2.augmenterSalairePct(3); //3% augmentation
 	    e2.incrementerAge();
