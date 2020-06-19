@@ -3,10 +3,34 @@ package tp.dao;
 import java.util.List;
 
 import tp.data.Devise;
+import util.MyUtil;
 
 public class TestDaoApp {
+	
+	public static void testException1() {
+		int a=6;
+		int b=Integer.parseInt(MyUtil.inputDlg("b="));
+		try {
+			int res=a/b;
+			System.out.println("res="+res);
+		} catch (Exception e) {
+			//System.err.println(e.getMessage());
+			e.printStackTrace();
+			// eventuel System.exit(0); pour arreter le programme
+		}
+		System.out.println("suite");
+	}
+	
+	public static void testException2() {
+	    String nombreSaisiEnTantString = MyUtil.inputDlg("x="); // "12.5" , "3a"
+	    double x= Double.parseDouble(nombreSaisiEnTantString);
+	    x=x*10;
+	    System.out.println("x="+x);
+	}
 
 	public static void main(String[] args) {
+		//testException1();
+		testException2();
         DeviseDao deviseDao = null; //DeviseDao est une interface
         deviseDao = new DeviseDaoSimulation();
         Devise deviseDollar = deviseDao.rechercherDevise("USD");
