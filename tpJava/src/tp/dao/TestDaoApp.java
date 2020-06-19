@@ -2,6 +2,7 @@ package tp.dao;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -28,7 +29,7 @@ public class TestDaoApp {
 	
 	public static void testException2() {
 	    String nombreSaisiEnTantString = MyUtil.inputDlg("x="); // "12.5" , "3a"
-	    double x=0;
+	    double x=0.0;
 		try {
 			x = Double.parseDouble(nombreSaisiEnTantString);
 		} catch (NumberFormatException e) {
@@ -40,18 +41,14 @@ public class TestDaoApp {
 	}
 	
 	public static void testException3() {
-	    InputStream f;
-		try {
-			f = new FileInputStream("f1.txt");
-			BufferedReader ff=new BufferedReader(new InputStreamReader(f));
-			String ligne1=ff.readLine();
-			System.out.println("ligne1 de f1.txt="+ligne1);
-			ff.close();
-			f.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	   
+	
+				InputStream f = new FileInputStream("f1.txt");
+				BufferedReader ff=new BufferedReader(new InputStreamReader(f));
+				String ligne1=ff.readLine();
+				System.out.println("ligne1 de f1.txt="+ligne1);
+				ff.close();
+				f.close();
+		
 	}
 
 	public static void main(String[] args) {
