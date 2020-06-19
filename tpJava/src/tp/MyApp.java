@@ -12,7 +12,7 @@ public class MyApp {
 		System.out.println("Hello world");
 		//m1();
 		//m2();
-		//testPersonne();
+		testPersonne();
 		//testPorte();
 		//testGc();
 		//testStringEtTableau();
@@ -189,7 +189,9 @@ public class MyApp {
 		p2.incrementerAge();
 		p2.afficher();
 		//System.out.println("p2="+p2);//p2.toString() appelé implicitement
-		p2.setAge(-50);//valeur interdite refusée
+		
+			p2.setAge(-50);//valeur interdite refusée
+		
 		p2.afficher();
 		if(p1.equals(p2)) {
 			System.out.println("p1 et p2 ont les memes valeurs");
