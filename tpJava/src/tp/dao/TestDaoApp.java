@@ -23,7 +23,13 @@ public class TestDaoApp {
 	
 	public static void testException2() {
 	    String nombreSaisiEnTantString = MyUtil.inputDlg("x="); // "12.5" , "3a"
-	    double x= Double.parseDouble(nombreSaisiEnTantString);
+	    double x=0;
+		try {
+			x = Double.parseDouble(nombreSaisiEnTantString);
+		} catch (NumberFormatException e) {
+			//System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
 	    x=x*10;
 	    System.out.println("x="+x);
 	}
