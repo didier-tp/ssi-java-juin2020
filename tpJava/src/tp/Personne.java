@@ -90,8 +90,8 @@ public Integer getAge() {
 
 public void setAge(Integer age) {
 	if(age<0) {
-		 System.err.println("age négatif invalide");
-		 //throw new RuntimeException("age négatif invalide");
+		 //System.err.println("age négatif invalide");
+		 throw new RuntimeException("age négatif invalide");
 	}else {
 	    this.age = age;
 	}
