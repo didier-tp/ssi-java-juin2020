@@ -15,6 +15,23 @@ public class TestCollectionApp {
 	}
 	
 	public static void main(String[] args) {
+		//m1();
+		m2();
+	}
+	
+	public static void m2() {
+		//déclarer et construire une liste de Double
+		
+		//ajouter quelques valeurs dans la liste
+		//ex: 1.2  3.3   5    2.8  2.9  4.0
+		
+		//parcourir les valeurs de la liste et calculer la somme 
+		
+		//calculer et afficher la moyenne
+		
+	}
+	
+	public static void m1() {
 		Set<String> set1 = new HashSet<String>();
 		set1.add("France");
 		set1.add("Espagne");
@@ -34,9 +51,15 @@ public class TestCollectionApp {
         //liste1.clear();
 		
 		printCollection(liste1);
-		/*for(String jour : liste1) {
+		
+		for(String jour : liste1) {
 			System.out.println("jour="+jour);
-		}*/
+		}
+		
+		for(int i=0;i<liste1.size();i++) {
+			String jour = liste1.get(i); //ressemble à tab1[i]
+			System.out.println("i="+i +" jour="+jour);
+		}
 		
         System.out.println("liste1="+liste1.toString());
         
