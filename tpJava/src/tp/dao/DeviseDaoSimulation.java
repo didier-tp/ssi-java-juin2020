@@ -45,6 +45,8 @@ public class DeviseDaoSimulation implements DeviseDao {
 	@Override
 	public void supprimerDevise(String code) {
 			this.mapDevises.remove(code);
+			//map.remove(clef) 
+			//et confusion avec entityManager.remove(object) de Hibernate/Jpa
 	}
 
 }
