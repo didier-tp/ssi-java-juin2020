@@ -12,7 +12,7 @@ public class MyApp {
 		System.out.println("Hello world");
 		//m1();
 		//m2();
-		testPersonne();
+		//testPersonne();
 		//testPorte();
 		//testGc();
 		//testStringEtTableau();
@@ -20,7 +20,7 @@ public class MyApp {
 		/*MyApp myApp = new MyApp();
 		myApp.testMath();*/
 		//testStatic();
-		//testCercle();
+		testCercle();
 		testDate();
 	}
 	
@@ -72,6 +72,7 @@ public class MyApp {
 		MyUtil.display("coordonnées de c1=" + c1); //ou bien + c1.toString()
 		MyUtil.display("perimetre de c1=" + c1.perimetre());
 		MyUtil.display("surface de c1=" + c1.surface());
+		System.out.printf("** perimetre=%f surface=%f\n", c1.perimetre() , c1.surface());
 		//...
 		Cercle c2= new Cercle(12.0,12.0,50.0);//xc,yc,rayon
 		MyUtil.display("coordonnées de c2=" + c2); //ou bien + c1.toString()
@@ -178,14 +179,26 @@ public class MyApp {
 		Personne p1=null;
 		p1 = new Personne("toto",45,60.0);
 		//avec v1 (tout en public): p1.nom="Dupond"; p1.age=45; p1.poids=60.0;
-		p1.setNom("Dupond"); p1.setAge(45); p1.setPoids(60.0);
+		p1.setNom("Dupond"); 
+		try {
+			p1.setAge(45);
+		} catch (Exception e3) {
+			e3.printStackTrace();
+		} 
+		p1.setPoids(60.0);
 		p1.incrementerAge();
 		//p1.afficher();
 		System.out.println("p1="+p1.toString());
 		
 		Personne p2=null;
 		p2 = new Personne();//via constructeur par defaut
-		p2.setNom("Durant"); p2.setAge(35); p2.setPoids(40.0);
+		p2.setNom("Durant"); 
+		try {
+			p2.setAge(35);
+		} catch (Exception e3) {
+			e3.printStackTrace();
+		} 
+		p2.setPoids(40.0);
 		p2.incrementerAge();
 		p2.afficher();
 		//System.out.println("p2="+p2);//p2.toString() appelé implicitement
@@ -204,7 +217,8 @@ public class MyApp {
 		
 		Personne eOuP = null;
 		Employe e1 = new Employe();
-		e1.setNom("axelle Aire"); e1.setPoids(67.7); e1.setAge(33);
+		e1.setNom("axelle Aire"); e1.setPoids(67.7); 
+		e1.setAge(33);
 		e1.setSalaire(2500.0);
 		//e1.afficher();
 		MyUtil.display(e1.toString());

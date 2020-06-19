@@ -88,10 +88,11 @@ public Integer getAge() {
 
 
 
-public void setAge(Integer age) {
+public void setAge(Integer age) throws RuntimeException {
 	if(age<0) {
 		 //System.err.println("age négatif invalide");
 		 throw new RuntimeException("age négatif invalide");
+		//throw new Exception("age négatif invalide"); //version à try/catch obligatoire ET PENIBLE
 	}else {
 	    this.age = age;
 	}
