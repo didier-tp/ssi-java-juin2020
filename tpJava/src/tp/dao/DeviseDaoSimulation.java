@@ -1,5 +1,6 @@
 package tp.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,8 +23,8 @@ public class DeviseDaoSimulation implements DeviseDao {
 
 	@Override
 	public Devise creerDevise(Devise d) {
-		// TODO Auto-generated method stub
-		return null;
+		this.mapDevises.put(d.getCode(),d );
+		return d;
 	}
 
 	@Override
@@ -33,20 +34,20 @@ public class DeviseDaoSimulation implements DeviseDao {
 
 	@Override
 	public List<Devise> rechercherToutesDevises() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<Devise>(this.mapDevises.values());
 	}
 
 	@Override
 	public void updateDevise(Devise d) {
-		// TODO Auto-generated method stub
-
+		this.mapDevises.put(d.getCode(),d );
 	}
 
 	@Override
 	public void supprimerDevise(String code) {
-		// TODO Auto-generated method stub
-
+		Devise deviseAsupprimer = this.mapDevises.get(code);
+		if(deviseAsupprimer!=null) {
+			this.mapDevises.remove(deviseAsupprimer);
+		}
 	}
 
 }
