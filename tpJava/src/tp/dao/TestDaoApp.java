@@ -1,5 +1,10 @@
 package tp.dao;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import tp.data.Devise;
@@ -33,10 +38,26 @@ public class TestDaoApp {
 	    x=x*10;
 	    System.out.println("x="+x);
 	}
+	
+	public static void testException3() {
+	    InputStream f;
+		try {
+			f = new FileInputStream("f1.txt");
+			BufferedReader ff=new BufferedReader(new InputStreamReader(f));
+			String ligne1=ff.readLine();
+			System.out.println("ligne1 de f1.txt="+ligne1);
+			ff.close();
+			f.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	   
+	}
 
 	public static void main(String[] args) {
 		//testException1();
 		testException2();
+		testException3();
         DeviseDao deviseDao = null; //DeviseDao est une interface
         deviseDao = new DeviseDaoSimulation();
         Devise deviseDollar = deviseDao.rechercherDevise("USD");
