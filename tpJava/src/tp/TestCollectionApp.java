@@ -21,7 +21,7 @@ public class TestCollectionApp {
 	
 	public static void m2() {
 		//déclarer et construire une liste de Double
-		List<Double> listeD = new ArrayList<Double>();
+		List<Double> listeD = new ArrayList<>();
 		//ajouter quelques valeurs dans la liste
 		//ex: 1.2  3.3   5    2.8  2.9  4.0
 		listeD.add(1.2);		listeD.add(3.3);
@@ -35,6 +35,10 @@ public class TestCollectionApp {
 		//calculer et afficher la moyenne
 		double moyenne=somme/listeD.size();
 		System.out.println("moyenne="+moyenne);
+		
+		System.out.println("listeD="+listeD);
+		java.util.Collections.sort(listeD);
+		System.out.println("listeD="+listeD);
 	}
 	
 	public static void m1() {
