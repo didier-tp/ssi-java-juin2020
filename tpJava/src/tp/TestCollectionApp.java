@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import tp.data.Devise;
+
 public class TestCollectionApp {
 
 	public static void printCollection(Collection<String> col){
@@ -16,7 +18,18 @@ public class TestCollectionApp {
 	
 	public static void main(String[] args) {
 		//m1();
-		m2();
+		//m2();
+		m3();
+	}
+	
+	public static void m3() {
+		List<Devise> listeDevises = new ArrayList<>();
+		Devise d1 = new Devise("EUR","Euro",1.0);
+		listeDevises.add(d1);
+		listeDevises.add(new Devise("USD","Dollar",1.1));
+		listeDevises.add(new Devise("GBP","Livre",0.9));
+		listeDevises.add(new Devise("JPY","Yen",120.0));
+		System.out.println("listeDevises="+listeDevises);//listeDevises.toString() appelé implicitement
 	}
 	
 	public static void m2() {
