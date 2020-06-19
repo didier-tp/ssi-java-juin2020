@@ -44,10 +44,7 @@ public class DeviseDaoSimulation implements DeviseDao {
 
 	@Override
 	public void supprimerDevise(String code) {
-		Devise deviseAsupprimer = this.mapDevises.get(code);
-		if(deviseAsupprimer!=null) {
-			this.mapDevises.remove(deviseAsupprimer);
-		}
+			this.mapDevises.remove(code);
 	}
 
 }
