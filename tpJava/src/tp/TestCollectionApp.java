@@ -21,14 +21,20 @@ public class TestCollectionApp {
 	
 	public static void m2() {
 		//déclarer et construire une liste de Double
-		
+		List<Double> listeD = new ArrayList<Double>();
 		//ajouter quelques valeurs dans la liste
 		//ex: 1.2  3.3   5    2.8  2.9  4.0
-		
+		listeD.add(1.2);		listeD.add(3.3);
+		listeD.add(5.0);		listeD.add(2.8);
+		listeD.add(2.9);		listeD.add(4.0);
 		//parcourir les valeurs de la liste et calculer la somme 
-		
+		double somme =0.0;
+		for(Double d : listeD) {
+			somme+=d;//ou bien somme=somme+d;
+		}
 		//calculer et afficher la moyenne
-		
+		double moyenne=somme/listeD.size();
+		System.out.println("moyenne="+moyenne);
 	}
 	
 	public static void m1() {
