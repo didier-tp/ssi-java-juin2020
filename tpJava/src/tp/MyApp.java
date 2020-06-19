@@ -1,5 +1,7 @@
 package tp;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import tp.porte.Porte;
 import tp.porte.PorteBattant;
@@ -20,14 +22,25 @@ public class MyApp {
 		/*MyApp myApp = new MyApp();
 		myApp.testMath();*/
 		//testStatic();
-		testCercle();
+		//testCercle();
 		testDate();
 	}
 	
 	public static void testDate() {
 	   //java.util.Date d = new java.util.Date(); //sans import
-		Date d = new Date();
+	   Date d = new Date(); //date aujourd'hui à l'instant présent (mb ms depuis 01/01/1970 GMT)
+	   /*
+	   Calendar cal = Calendar.getInstance();
+	   cal.set(1969,7-1,11); //11/07/1969
+	   d=cal.getTime();
+	   */
 	   System.out.println("d="+d);
+	   SimpleDateFormat simpleDateFormat_us = new SimpleDateFormat("yyyy-MM-dd");
+	   String sdate_us = simpleDateFormat_us.format(d);
+	   System.out.println("sdate_us="+sdate_us);
+	   SimpleDateFormat simpleDateFormat_fr = new SimpleDateFormat("dd/MM/yyyy");
+	   String sdate_fr = simpleDateFormat_fr.format(d);
+	   System.out.println("sdate_fr="+sdate_fr);
 	}
 	
 	public static void testPorte() {
