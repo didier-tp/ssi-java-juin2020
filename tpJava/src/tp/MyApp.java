@@ -72,7 +72,7 @@ public class MyApp {
 		MyUtil.display("coordonnées de c1=" + c1); //ou bien + c1.toString()
 		MyUtil.display("perimetre de c1=" + c1.perimetre());
 		MyUtil.display("surface de c1=" + c1.surface());
-		System.out.printf("** perimetre=%f surface=%f\n", c1.perimetre() , c1.surface());
+		System.out.printf("* perimetre=%f surface=%f\n", c1.perimetre() , c1.surface());
 		//...
 		Cercle c2= new Cercle(12.0,12.0,50.0);//xc,yc,rayon
 		MyUtil.display("coordonnées de c2=" + c2); //ou bien + c1.toString()
