@@ -29,6 +29,7 @@ public class MyApp {
 	public static void testDate() {
 	   //java.util.Date d = new java.util.Date(); //sans import
 	   Date d = new Date(); //date aujourd'hui à l'instant présent (mb ms depuis 01/01/1970 GMT)
+	   //System.nanoTime()
 	   /*
 	   Calendar cal = Calendar.getInstance();
 	   cal.set(1969,7-1,11); //11/07/1969
