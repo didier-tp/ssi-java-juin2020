@@ -29,6 +29,16 @@ public class TestCollectionApp {
 		listeDevises.add(new Devise("USD","Dollar",1.1));
 		listeDevises.add(new Devise("GBP","Livre",0.9));
 		listeDevises.add(new Devise("JPY","Yen",120.0));
+		
+		java.util.Collections.sort(listeDevises, new java.util.Comparator<Devise>(){
+				@Override
+				public int compare(Devise d1, Devise d2) {
+					if (d1.getChange() > d2.getChange()) { return 1; }
+					else if (d1.getChange() < d2.getChange()) { return -1; }
+					else { return 0; }
+				}
+			});
+		
 		System.out.println("listeDevises="+listeDevises);//listeDevises.toString() appelé implicitement
 	}
 	
