@@ -41,20 +41,24 @@ public class TestDaoApp {
 	}
 	
 	public static void testException3() {
-	
-				InputStream f = new FileInputStream("f1.txt");
-				BufferedReader ff=new BufferedReader(new InputStreamReader(f));
-				String ligne1=ff.readLine();
-				System.out.println("ligne1 de f1.txt="+ligne1);
-				ff.close();
-				f.close();
-		
+				try {
+					InputStream f = new FileInputStream("f1.txt");
+					BufferedReader ff=new BufferedReader(new InputStreamReader(f));
+					String ligne1=ff.readLine();
+					System.out.println("ligne1 de f1.txt="+ligne1);
+					ff.close();
+					f.close();
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 	}
 
 	public static void main(String[] args) {
 		//testException1();
-		testException2();
-		testException3();
+		//testException2();
+		//testException3();
         DeviseDao deviseDao = null; //DeviseDao est une interface
         deviseDao = new DeviseDaoSimulation();
         Devise deviseDollar = deviseDao.rechercherDevise("USD");
