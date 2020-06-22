@@ -12,6 +12,9 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import tp.data.Produit;
 
 public class FileApp {
@@ -23,9 +26,13 @@ public class FileApp {
 			FileInputStream ifile = new FileInputStream("produits.csv"); //sera recherché à la racine du projet eclipse tpJavaMaven
 			BufferedReader dis =
 			    new BufferedReader(new InputStreamReader(ifile));
+			//Scanner dis = new Scanner(ifile);
 			
 			String ligneLue="";
 			while (ligneLue!=null) {
+				   /* if(dis.hasNext())
+				       ligneLue=dis.next();
+				   else ligneLue=null; */
 			       ligneLue = dis.readLine(); // lecture d'une ligne dans le fichier
 			       //ajouter ligneLue dans listeLignes
 			       if(ligneLue!=null)
@@ -64,6 +71,26 @@ public class FileApp {
 		double prixTotal=0.0;
 		for(Produit prod : listeProduits) {
 			prixTotal+=prod.getPrixHt(); //prixTotal=prixTotal+prod.getPrixHt(); 
+		}
+		
+		//générer un fichier produits.json dans le format JSON .
+		try {
+			ObjectMapper objMapperJackson = new ObjectMapper();
+			String listeProduitsAsJsonString = objMapperJackson.writeValueAsString(listeProduits);
+			//equivalent java de JSON.stringify()
+			/*
+			Produit[] tabProduits = objMapperJackson.readValue(listeProduitsAsJsonString, Produit[].class);
+			//equivalent java de JSON.parse()
+			for(Produit p: tabProduits)
+			    System.out.println("p="+p);
+			*/
+			System.out.println("listeProduitsAsJsonString="+listeProduitsAsJsonString);
+			
+			FileOutputStream of = new FileOutputStream("produits.json");
+			objMapperJackson.writeValue(of, listeProduits);
+			of.close();
+		} catch (Exception e1) {
+			e1.printStackTrace();
 		}
 		
 		// afficher la somme des prix à l'écran
