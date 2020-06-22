@@ -1,21 +1,21 @@
 package tp;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintStream;
 //import java.nio.charset.StandardCharsets;
 //import java.nio.file.FileSystems;
 //import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tp.data.Produit;
+import tp.data.Stat;
+import tp.util.MyCsvUtil;
 
 public class FileApp {
 
@@ -24,21 +24,23 @@ public class FileApp {
 		List<String> listeLignes = new ArrayList<>();
 		try {
 			FileInputStream ifile = new FileInputStream("produits.csv"); //sera recherché à la racine du projet eclipse tpJavaMaven
-			BufferedReader dis =
-			    new BufferedReader(new InputStreamReader(ifile));
-			//Scanner dis = new Scanner(ifile);
+			//BufferedReader dis =  new BufferedReader(new InputStreamReader(ifile));
+			Scanner scanner = new Scanner(ifile);
 			
 			String ligneLue="";
 			while (ligneLue!=null) {
-				   /* if(dis.hasNext())
-				       ligneLue=dis.next();
-				   else ligneLue=null; */
-			       ligneLue = dis.readLine(); // lecture d'une ligne dans le fichier
+				   if(scanner.hasNext()) {
+				       ligneLue=scanner.nextLine();//better than .next() if space in value
+				       //System.out.println("ligneLue="+ligneLue);
+				   }
+				   else ligneLue=null; 
+			       //ligneLue = dis.readLine(); // lecture d'une ligne dans le fichier
 			       //ajouter ligneLue dans listeLignes
 			       if(ligneLue!=null)
 			    	   listeLignes.add(ligneLue);
 			}
-			dis.close(); 
+			//dis.close();
+			scanner.close();
 			ifile.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -68,10 +70,25 @@ public class FileApp {
 			listeProduits.add(produit);
 		}
 		// via une boucle for , on calculera la somme des prix
-		double prixTotal=0.0;
+		double prixTotalHt=0.0;
+		double prixTotalTtc=0.0;
 		for(Produit prod : listeProduits) {
-			prixTotal+=prod.getPrixHt(); //prixTotal=prixTotal+prod.getPrixHt(); 
+			prixTotalHt+=prod.getPrixHt(); //prixTotal=prixTotal+prod.getPrixHt(); 
+			prixTotalTtc+=prod.getPrixHt() * (1+ prod.getTauxTva()/100.0);
 		}
+		Stat statHt = new Stat();		statHt.setLabel("statHt");
+		statHt.setSomme(prixTotalHt);   statHt.setMoyenne(prixTotalHt/listeProduits.size());
+		statHt.setEcartType(null);      
+		Stat statTtc = new Stat("statTtc",prixTotalTtc,prixTotalTtc/listeProduits.size(),null);
+		List<Stat> listeStats = new ArrayList<>();
+		listeStats.add(statHt); 	listeStats.add(statTtc); 
+		MyCsvUtil.writeValuesAsCsvFile(listeStats,"stats.csv");
+		
+		List<Produit> listeProduitsApresSolde = new ArrayList<>();
+		for(Produit p : listeProduits) {
+			listeProduitsApresSolde.add(new Produit(p.getId(),p.getLabel(),p.getPrixHt()*0.5,p.getTauxTva()));//solde de 50%
+		}
+		MyCsvUtil.writeValuesAsCsvFile(listeProduitsApresSolde,"produitsApresSoldes.csv");
 		
 		//générer un fichier produits.json dans le format JSON .
 		try {
@@ -94,15 +111,15 @@ public class FileApp {
 		}
 		
 		// afficher la somme des prix à l'écran
-		System.out.println("prixTotal="+prixTotal);
+		System.out.println("prixTotalHt="+prixTotalHt);
 		
 		//Tp falculatif , générer un fichiers stats.txt
 		//qui comporte la ligne prixTotal=...
 		try {
-			FileOutputStream of = new FileOutputStream("stats.txt"); //ce ficher sera visible après un refresh
+			FileOutputStream of = new FileOutputStream("stats.txt"); //ce fichier sera visible après un refresh
 			PrintStream ps = new PrintStream(of);
-			ps.println("prixTotal (HT)="+prixTotal);
-			ps.println("...");
+			ps.println("prixTotal (HT)="+prixTotalHt);
+			ps.println("prixTotal (ttc)="+prixTotalTtc);
 			ps.close(); of.close();// fermetures dans l'ordre inverse des ouvertures:
 		} catch (IOException e) {
 			e.printStackTrace();
