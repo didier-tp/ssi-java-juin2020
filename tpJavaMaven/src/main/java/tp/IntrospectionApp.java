@@ -12,7 +12,7 @@ public class IntrospectionApp {
 			//est un objet technique decruit la structure d'une classe java ordinaire
 			Field[] tabChamps = c.getDeclaredFields();
 			for(Field f : tabChamps) {
-				System.out.println("attribut " + f.getName() );
+				System.out.println("attribut " + f.getName() + " " + f.getType().getName());
 			}
 			
 		} catch (ClassNotFoundException e) {
