@@ -1,5 +1,6 @@
 package tp;
 
+//import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -11,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//import javax.xml.bind.JAXBContext;
+//import javax.xml.bind.Marshaller;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tp.data.Produit;
@@ -18,6 +22,20 @@ import tp.data.Stat;
 import tp.util.MyCsvUtil;
 
 public class FileApp {
+	
+	/*
+	public static void serialisationXmlViaJaxb2(Produit produit) {
+		try {
+			JAXBContext jctx =     
+					JAXBContext.newInstance(Produit.class);
+			Marshaller m = jctx.createMarshaller();// pour ecrire
+			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			//écriture dans nouveau fichier produits.xml:
+			m.marshal(produit, new File("produits.xml"));//+Refresh eclipse
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}*/
 
 	public static void main(String[] args) {
 		// lire le fichier produits.csv et remonter le contenu dans une collection de String
@@ -89,6 +107,7 @@ public class FileApp {
 			listeProduitsApresSolde.add(new Produit(p.getId(),p.getLabel(),p.getPrixHt()*0.5,p.getTauxTva()));//solde de 50%
 		}
 		MyCsvUtil.writeValuesAsCsvFile(listeProduitsApresSolde,"produitsApresSoldes.csv");
+		//serialisationXmlViaJaxb2(listeProduitsApresSolde.get(0));
 		
 		//générer un fichier produits.json dans le format JSON .
 		try {

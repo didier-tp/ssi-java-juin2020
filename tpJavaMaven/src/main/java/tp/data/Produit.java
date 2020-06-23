@@ -1,9 +1,12 @@
 package tp.data;
 
+//import javax.xml.bind.annotation.XmlRootElement;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import tp.util.CsvIgnore;
 
+//@XmlRootElement(name = "produit")
 public class Produit {
 	private Integer id;
 	private String label;

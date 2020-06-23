@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<produit>
+    <id>1</id>
+    <label>stylo bille rouge</label>
+    <prixHt>0.8</prixHt>
+    <tauxTva>20.0</tauxTva>
+</produit>
