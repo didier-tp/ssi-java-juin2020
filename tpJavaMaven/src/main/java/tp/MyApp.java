@@ -18,7 +18,7 @@ public class MyApp {
 	 */
 	public static void main(String[] args) {
 		System.out.println("java maven");
-        //JOptionPane.showMessageDialog(null, "java maven");
+        JOptionPane.showMessageDialog(null, "java maven");
 		String userName = System.getProperty("user.name");
 		System.out.println("userName="+userName);
 		/*
