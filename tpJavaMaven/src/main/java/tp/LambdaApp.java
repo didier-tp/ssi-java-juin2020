@@ -39,10 +39,10 @@ public class LambdaApp {
         
         
         //Collections.sort(listeProduits, 
-        //   				(Produit p1,Produit p2)->{ return (int)(p1.getPrixHt()-p2.getPrixHt());} );
+         //				(Produit p1,Produit p2)->{ return (int)(p1.getPrixHt() -p2.getPrixHt());} );
         
-        //Collections.sort(listeProduits, 
-        //				(p1,p2)->(int)(p1.getPrixHt()-p2.getPrixHt()));
+        Collections.sort(listeProduits, 
+        				(p1,p2)->(int)(p1.getPrixHt() -p2.getPrixHt()));
         
         
         System.out.println("apres tri par prix croissants:");
@@ -60,11 +60,11 @@ public class LambdaApp {
         	System.out.println("\t" +p);
         }
         
-        filtrerListe(listeProduits,(p)->p.getPrixHt()<=3.0);
+       List<Produit> listeProduitsFiltres = filtrerListe(listeProduits,(p)->p.getPrixHt()<=3.0);
         
       //afficher
         System.out.println("apres filtrage");
-        for(Produit p : listeProduits) {
+        for(Produit p : listeProduitsFiltres) {
         	System.out.println("\t" +p);
         }
         
