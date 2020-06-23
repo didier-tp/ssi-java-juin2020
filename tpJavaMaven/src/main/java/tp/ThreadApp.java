@@ -20,6 +20,9 @@ public class ThreadApp {
 		
         Thread nouveauThread2 = new Thread(codeTraitement);
         Thread nouveauThread3 = new Thread(codeTraitement);
+        //au sein de cet exemple , les thread 2 et  3 executent exactement le meme
+        //code "codeTraitement" (code ré-entrant)
+        
         Thread nouveauThread4 = new Thread(codeTraitement2);
         
         Thread nouveauThread5 = new Thread(()-> { ThreadApp.traitementSimple();}) ;
