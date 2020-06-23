@@ -67,6 +67,10 @@ public class LambdaApp {
        List<Produit> listeProduitsFiltres = filtrerListe(listeProduits,
     		                                             (p)-> p.getPrixHt()>=3.0 && p.getPrixHt()<=3.5 );
         
+       /* 
+       List<Produit> listeProduitsFiltres = filtrerListe(listeProduits,
+               (Produit p)-> { if(p.getPrixHt()>=3.0 && p.getPrixHt()<=3.5) return true; else return false; } );
+       */
       //afficher
         System.out.println("apres filtrage");
         for(Produit p : listeProduitsFiltres) {
