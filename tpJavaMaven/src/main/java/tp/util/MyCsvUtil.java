@@ -13,12 +13,16 @@ public class MyCsvUtil {
 		  try {
 			Field[] tabChamps = c.getDeclaredFields();
 				for(Field f : tabChamps) {
-					f.setAccessible(true); //pour acceder aux parties privées
-					String fieldValue= f.get(obj)==null?null:f.get(obj).toString();
-					if(csvString==null) {
-						csvString = fieldValue;
-					}else {
-						csvString = csvString + ";" +fieldValue;
+					CsvIgnore annotCsvIgnore = f.getAnnotation(CsvIgnore.class);
+					//si annotCsvIgnore==null , @CsvIgnore n'a pas été placé au dessus de f
+					if(annotCsvIgnore==null) {
+						f.setAccessible(true); //pour acceder aux parties privées
+						String fieldValue= f.get(obj)==null?null:f.get(obj).toString();
+						if(csvString==null) {
+							csvString = fieldValue;
+						}else {
+							csvString = csvString + ";" +fieldValue;
+						}
 					}
 				}
 		} catch (Exception e) {
@@ -34,11 +38,15 @@ public class MyCsvUtil {
 		  try {
 			Field[] tabChamps = c.getDeclaredFields();
 				for(Field f : tabChamps) {
-					String fieldValue= f.getName();
-					if(csvString==null) {
-						csvString = fieldValue;
-					}else {
-						csvString = csvString + ";" +fieldValue;
+					CsvIgnore annotCsvIgnore = f.getAnnotation(CsvIgnore.class);
+					//si annotCsvIgnore==null , @CsvIgnore n'a pas été placé au dessus de f
+					if(annotCsvIgnore==null) {
+						String fieldValue= f.getName();
+						if(csvString==null) {
+							csvString = fieldValue;
+						}else {
+							csvString = csvString + ";" +fieldValue;
+						}
 					}
 				}
 		} catch (Exception e) {

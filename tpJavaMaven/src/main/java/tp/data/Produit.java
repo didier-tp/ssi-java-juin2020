@@ -1,9 +1,16 @@
 package tp.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import tp.util.CsvIgnore;
+
 public class Produit {
 	private Integer id;
 	private String label;
 	private Double prixHt;
+	
+	@CsvIgnore
+	@JsonIgnore
 	private Double tauxTva;
 	//+get,set , constructeur , toString()
 	

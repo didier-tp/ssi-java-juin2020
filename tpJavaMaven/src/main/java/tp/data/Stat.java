@@ -1,9 +1,13 @@
 package tp.data;
 
+import tp.util.CsvIgnore;
+
 public class Stat {
 	private String label;
 	private Double somme;
 	private Double moyenne;
+	
+	@CsvIgnore
 	private Double ecartType;
 
 
