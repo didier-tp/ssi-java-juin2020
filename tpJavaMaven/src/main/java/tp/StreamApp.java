@@ -24,7 +24,7 @@ public class StreamApp {
         }
         
         //on va enchainer à partir de listeProduits.stream()
-        //.sort ( ... ) avec une lambda pour trier par odre de prix croissant
+        //.sorted ( ... ) avec une lambda pour trier par odre de prix croissant
         //.filter(...) avec une lambda qui filtre les produits prix >=2.5
         //.map (...)  avec une lambda qui va transformer les produits , label en majuscules
         //.collect(Collectors.toList());
@@ -43,5 +43,19 @@ public class StreamApp {
         for(Produit p : listeProduitsTriesFiltresEtTransformes) {
         	System.out.println("\t" +p);
         }
+        
+       //Version avec affichage direct en fin d'enchainement:
+        System.out.println("idem via .forEach():");
+        listeProduits.stream()
+                 .sorted((p1,p2)->(int)(p1.getPrixHt() -p2.getPrixHt()))
+                 .filter((p)->p.getPrixHt()>=2.5)
+                 .map((p) -> { p.setLabel(p.getLabel().toUpperCase()); return p; })
+                 .forEach( (p) -> System.out.println(p) );
+        
+        //"moyenne des prix de tous les produits:"
+        Double sommePrixHt = listeProduits.stream()
+                 .map((p) -> p.getPrixHt())
+                 .reduce(0.0 , (x,y) -> x+y);
+        System.out.println("moyenne des prixHt de tous les produits:"+sommePrixHt/listeProduits.size());
 	}
 }
