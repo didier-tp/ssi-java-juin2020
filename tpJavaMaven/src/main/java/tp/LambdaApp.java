@@ -39,10 +39,10 @@ public class LambdaApp {
         
         
         //Collections.sort(listeProduits, 
-         //				(Produit p1,Produit p2)->{ return (int)(p1.getPrixHt() -p2.getPrixHt());} );
+         //				(Produit p1,Produit p2)->{ return (int)(100*(p1.getPrixHt() -p2.getPrixHt()));} );
         
         Collections.sort(listeProduits, 
-        				(p1,p2)->(int)(p1.getPrixHt() -p2.getPrixHt()));
+        				(p1,p2)->(int)(100*(p1.getPrixHt() -p2.getPrixHt())));
         
         
         System.out.println("apres tri par prix croissants:");
