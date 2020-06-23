@@ -24,7 +24,15 @@ public class StreamApp {
         }
         
         //on va enchainer à partir de listeProduits.stream()
-        //.sort ( ... ) avec  
+        //.sort ( ... ) avec une lambda pour trier par odre de prix croissant
+        //.filter(...) avec une lambda qui filtre les produits prix >=2.5
+        //.map (...)  avec une lambda qui va transformer les produits , label en majuscules
+        //.collect(Collectors.toList());
+        
+        //exemple de lambda pour .map(...)
+        // (p) -> { p.setLabel(p.getLabel().toUppperCase()); return p; }
+        
+        //afficher la nouvelle liste construite.
         
 	}
 }
