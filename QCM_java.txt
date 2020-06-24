@@ -1,0 +1,5 @@
+http://www.d-defrance.fr/ngr/qcm
+1.training
+2.actualiser la liste
+  puis click sur java
+3. effectuer le qcm
