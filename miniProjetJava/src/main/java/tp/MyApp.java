@@ -57,7 +57,7 @@ public class MyApp {
 	
     public static void premiersTests() {
 		List<Figure2D> listeFigures = new ArrayList<>();
-		
+		//Figure2D fig = new Figure2D(); //new impossible car Figure2D abstract
 		//<rect x='100' y='180' width='200' height='50'  stroke='black' stroke-width='5' fill='blue' />
 		Rectangle r = new Rectangle(100,180,200,50,"black",5,"blue");
 		System.out.println(r.toString());
