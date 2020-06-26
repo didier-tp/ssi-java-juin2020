@@ -1,0 +1,21 @@
+tomcat 8.5 ou 9 est compatible avec java 8+
+----------------
+si "7zip" ou equivalent sur votre Pc:
+   *télécharger la version "64-bit Windows zip (pgp, sha512) "
+   *recopier le fichier téléchargé apache-tomcat-9.0.36-windows-x64.zip
+    dans un répertoire du genre c:\prog ou d:\prog ou autre (idéalement sans espace)
+   *via 7zip ou un équivalent , lancer "extraire ici" ou ...
+   * Au sein du répertoire D:\Prog\apache-tomcat-9.0.36\bin le
+     script startup.bat sert à lancer le serveur tomcat dans le cas où les variables
+     d'environnement PATH et/ou JAVA_HOME sont fixées avec de bonnes valeurs.
+   * si un démarrage via startup.bat échoue ou pourra 
+     éditer , ajuster et lancer le script suivant (à placer à coté de startup.bat)
+
+    lancerTomcatWithEnv.bat
+REM set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_144
+set JAVA_HOME=C:\Program Files\Java\jdk-11.0.4
+set PATH=%JAVA_HOME%\bin;%PATH%
+startup.bat
+REM si conflit de numero de port (8080 déjà pris) modifier tomcat../conf/server.xml
+REM ne pas fermer la fenetre tomcat
+REM ouvrir http://localhost:8080 via un navigateur
