@@ -39,7 +39,7 @@ public class TvaServlet extends HttpServlet {
 	    response.setContentType("text/html");
 	    PrintWriter out = response.getWriter();
 	    out.println("<html><body>");
-	    out.println("<p>tva=<b>"+tva+"</b></p>");
+	    out.println("<p>tva=<i>"+tva+"</i></p>");
 	    out.println("<p>ttc=<b>"+ttc+"</b></p>");
 	    out.println("</body></html>");
 	}
