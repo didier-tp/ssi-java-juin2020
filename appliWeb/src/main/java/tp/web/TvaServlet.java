@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/TvaServlet")
 public class TvaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private int compteur=0;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -36,11 +38,18 @@ public class TvaServlet extends HttpServlet {
 	    double tva = ht * taux /100;
 	    double ttc = ht +tva;
 	    
-	    response.setContentType("text/html");
+	    synchronized (this) {
+			this.compteur++; //on verrouille this le temps de modifier la valeur du compteur
+			//this.compteur esr un attribut de la classe (PAS UNE VARIABLE LOCALE) 
+			//--> zone mémoire partagée entre tous les threads
+		}
+	    
+		response.setContentType("text/html");
 	    PrintWriter out = response.getWriter();
 	    out.println("<html><body>");
 	    out.println("<p>tva=<b>"+tva+"</b></p>");
 	    out.println("<p>ttc=<b>"+ttc+"</b></p>");
+	    out.println("<p>compteur=<i>"+this.compteur+"</i></p>");
 	    out.println("</body></html>");
 	}
 
