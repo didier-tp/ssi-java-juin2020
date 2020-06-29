@@ -6,6 +6,12 @@
 </head>
 <body>
    <p>calcul de tva</p>
-   
+   <!--  ici url relative par rapport à tva.html
+         qui sera lui meme vu via http://localhost:8080/appliWeb -->
+   <form action="TvaServlet" method="get">
+       ht : <input type="text" name="ht" /> <br/>
+       taux : <input type="text" name="taux" /> <br/>
+       <input type="submit" value="calculer tva" />
+   </form>
 </body>
 </html>
