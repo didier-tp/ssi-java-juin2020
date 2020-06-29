@@ -20,10 +20,10 @@
      <form method="get"> <!--  sans action="url..." la page jsp se rappelle elle meme . 
       Au bout du premier appel request.getParameter(x) retournera null coté serveur
       Apres le second appel , ça retournera la valeur saisie -->
-        x: <input type="text" name="x" /> <br/>
-        y: <input type="text" name="y" /> <br/>
+        x: <input type="text" name="x" value="<%=sX%>" /> <br/>
+        y: <input type="text" name="y" value="<%=sY%>" /> <br/>
         <input type="submit" value="plus" /> <br/>
      </form>
-     resultat=<%=res%>
+     resultat=<b><%=res%></b>
 </body>
 </html>
