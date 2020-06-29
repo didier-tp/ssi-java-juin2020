@@ -11,17 +11,21 @@
      double res=0;
      String sX = request.getParameter("x");
      String sY = request.getParameter("y");
-     if(sX!=null && sY!=null){
-    	 double x=Double.parseDouble(sX);
-    	 double y=Double.parseDouble(sY);
-    	 res=x+y;
+     try{ 
+	     if(sX!=null && sY!=null){
+	    	 double x=Double.parseDouble(sX);
+	    	 double y=Double.parseDouble(sY);
+	    	 res=x+y;
+	     }
+     }catch(Exception ex){
+    	 res=-1;
      }
      %>
      <form method="get"> <!--  sans action="url..." la page jsp se rappelle elle meme . 
       Au bout du premier appel request.getParameter(x) retournera null coté serveur
       Apres le second appel , ça retournera la valeur saisie -->
-        x: <input type="text" name="x" value="<%=sX%>" /> <br/>
-        y: <input type="text" name="y" value="<%=sY%>" /> <br/>
+        x: <input type='text' name="x" value='<%=sX!=null?sX:""%>' /> <br/>
+        y: <input type="text" name="y" value='<%=sY!=null?sY:""%>' /> <br/>
         <input type="submit" value="plus" /> <br/>
      </form>
      resultat=<b><%=res%></b>
