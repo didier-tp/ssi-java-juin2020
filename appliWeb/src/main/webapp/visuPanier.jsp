@@ -13,7 +13,8 @@
    <tr><th>nomProduit</th><th>quantite</th></tr>
     <%
     List<String> caddy = (List<String>) session.getAttribute("caddy");
-    for(String nomProd : caddy){
+    if(caddy!=null)
+      for(String nomProd : caddy){
     %>
     <tr><td><%=nomProd%></td><td>1</td></tr>
     <%}
