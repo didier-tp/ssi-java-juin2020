@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>login</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
    <!-- 
@@ -21,12 +22,14 @@
     -->
     <%
      String message="";
+     boolean cnOk = false;
      String username = request.getParameter("username");
      String password = request.getParameter("password");
      
 	  if(username!=null && password!=null){
 		 if( password.equals("pwd"+username) ){
 			 message="successful login. username="+username;
+			 cnOk= true;
 		 }else{
 			 message="login fail , wrong username or password , try again";
 		 }
@@ -38,6 +41,6 @@
         password: <input type="password" name="password" value='<%=password!=null?password:""%>' /> (pwd...)<br/>
         <input type="submit" value="login" /> <br/>
      </form>
-     <b><%=message%></b>
+     <p class='<%=cnOk==true?"ok":"error"%>' > <%=message%> </p>
 </body>
 </html>
