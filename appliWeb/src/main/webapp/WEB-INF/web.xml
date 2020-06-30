@@ -13,6 +13,10 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 	
+	<session-config>
+	    <session-timeout>3</session-timeout> <!-- session http expirant au bout de 3 mn d'inactivité --> 
+	</session-config>
+	
 	<!-- si pas de @WebServlet("/TvaServlet") dans le code java -->
     <!--  
 	<servlet>
