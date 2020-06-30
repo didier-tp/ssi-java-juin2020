@@ -4,7 +4,7 @@
 <hr/>
 <%
 User u = (User) session.getAttribute("user");
-String usernamePiedPage = u.getUsername();
+String usernamePiedPage = (u!=null)?u.getUsername():"?";
 //(String)session.getAttribute("username");
 %>
 <a href="index.html">index (retour accueil)</a> - username = <%=usernamePiedPage %>

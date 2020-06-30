@@ -36,7 +36,8 @@
 			 cnOk= true;
 		 }else{
 			 message="login fail , wrong username or password , try again";
-			 session.setAttribute("username", null);
+			 //session.setAttribute("username", null);
+			 session.setAttribute("user", null);
 		 }
 	  }
 	   
