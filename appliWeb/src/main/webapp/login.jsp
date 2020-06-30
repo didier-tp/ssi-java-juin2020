@@ -26,18 +26,18 @@
      
 	  if(username!=null && password!=null){
 		 if( password.equals("pwd"+username) ){
-			 message="sucessful login. username="+username;
+			 message="successful login. username="+username;
 		 }else{
 			 message="login fail , wrong username or password , try again";
 		 }
 	  }
 	   
      %>
-     <form method="get"> <!--  sans action="url..." la page jsp se rappelle elle meme .-->
+     <form method="post"> <!--  sans action="url..." la page jsp se rappelle elle meme .-->
         username: <input type='text' name="username" value='<%=username!=null?username:""%>' /> <br/>
-        password: <input type="text" name="password" value='<%=password!=null?password:""%>' /> (pwd...)<br/>
+        password: <input type="password" name="password" value='<%=password!=null?password:""%>' /> (pwd...)<br/>
         <input type="submit" value="login" /> <br/>
      </form>
-     resultat=<b><%=message%></b>
+     <b><%=message%></b>
 </body>
 </html>
