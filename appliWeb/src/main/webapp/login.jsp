@@ -30,9 +30,11 @@
 	  if(username!=null && password!=null){
 		 if( password.equals("pwd"+username) ){
 			 message="successful login. username="+username;
+			 session.setAttribute("username", username);
 			 cnOk= true;
 		 }else{
 			 message="login fail , wrong username or password , try again";
+			 session.setAttribute("username", null);
 		 }
 	  }
 	   
