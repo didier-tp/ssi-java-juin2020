@@ -42,5 +42,6 @@
         <input type="submit" value="login" /> <br/>
      </form>
      <p class='<%=cnOk==true?"ok":"error"%>' > <%=message%> </p>
+     <%@ include file="sp_piedpage.jsp" %>
 </body>
 </html>

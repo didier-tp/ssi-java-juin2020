@@ -29,5 +29,6 @@
         <input type="submit" value="plus" /> <br/>
      </form>
      resultat=<b><%=res%></b>
+     <%@ include file="sp_piedpage.jsp" %>
 </body>
 </html>
