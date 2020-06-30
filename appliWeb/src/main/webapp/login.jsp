@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="tp.data.User" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,8 @@
 	  if(username!=null && password!=null){
 		 if( password.equals("pwd"+username) ){
 			 message="successful login. username="+username;
-			 session.setAttribute("username", username);
+			 //session.setAttribute("username", username);
+			 session.setAttribute("user",new User(username,true));
 			 cnOk= true;
 		 }else{
 			 message="login fail , wrong username or password , try again";
