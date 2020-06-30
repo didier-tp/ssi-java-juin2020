@@ -5,8 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>calculatrice</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+     <%@ include file="sp_entete.jsp" %>
      <%
      double res=0;
      String sX = request.getParameter("x");

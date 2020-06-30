@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+   <%@ include file="sp_entete.jsp" %>
    <!-- 
    a faire en Tp (en s'inspirant de calculatrice.jsp) :
    saisir "username" et "password"
