@@ -19,5 +19,25 @@
    message sera par exemple "login fail , wrong username or password"
    ou bien "successful login , username=user1" .
     -->
+    <%
+     String message="";
+     String username = request.getParameter("username");
+     String password = request.getParameter("password");
+     
+	  if(username!=null && password!=null){
+		 if( password.equals("pwd"+username) ){
+			 message="sucessful login. username="+username;
+		 }else{
+			 message="login fail , wrong username or password , try again";
+		 }
+	  }
+	   
+     %>
+     <form method="get"> <!--  sans action="url..." la page jsp se rappelle elle meme .-->
+        username: <input type='text' name="username" value='<%=username!=null?username:""%>' /> <br/>
+        password: <input type="text" name="password" value='<%=password!=null?password:""%>' /> (pwd...)<br/>
+        <input type="submit" value="login" /> <br/>
+     </form>
+     resultat=<b><%=message%></b>
 </body>
 </html>
